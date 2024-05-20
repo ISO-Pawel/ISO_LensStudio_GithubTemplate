@@ -12,13 +12,13 @@ document.getElementById('canvas').replaceWith(session.output.live)
 
 const {lenses} = await cameraKit.lensRepository.loadLensGroups(['ecfa18a7-3d4b-42e0-8535-c1c3af0ef8a4'])
 
-session.applyLens(lenses[0])
+session.applyLens('3b21bf94-5723-494d-91a9-608a384dcfe4')
 let mediaStream = await navigator.mediaDevices.getUserMedia({video: 
     {facingMode: 'environment'}
 })
 
 const source = createMediaStreamSource(mediaStream, {
-    cameraType: 'back'
+    cameraType: 'front'
 })
 
 await session.setSource(source)
